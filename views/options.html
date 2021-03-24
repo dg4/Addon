@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<header>
+<a href="https://ikorektor.pl/dodatki" target="_blank" rel="noopener noreferrer">iKorektor v<span id="ver"></span></a>
+<a href="https://ikorektor.pl" target="_blank" rel="noopener noreferrer" id="logo"></a>
+</header>
+<table id="sett">
+<tr id="prem">
+<td colspan="2">
+<p id="prem-inf">Pakiet <span id="prem-name"></span> jest aktywny (<span id="prem-activity"></span>).</p>
+<p id="prem-err"></p>
+</td>
+</tr>
+<tr>
+<td>Kod aktywacyjny <a href="https://ikorektor.pl/pro" target="_blank" rel="noopener noreferrer">iKorektorPro</a>:</td>
+<td><span id="premcode-chck" class="premcode-none" title="Dodaj kod"></span><input type="text" id="premcode" maxlength="8" autocomplete="off" spellcheck="false"></td>
+</tr>
+<tr>
+<td>Rodzaj przycisku autokorekty:</td>
+<td class="radios">
+<label><input type="radio" name="btn-type" id="btn-type-small" value="small"><span>mały</span></label><label><input type="radio" name="btn-type" id="btn-type-big" value="big"><span>duży</span></label>
+</td>
+</tr>
+<tr>
+<td>Lokalizacja przycisku w polu tekstowym:</td>
+<td class="radios">
+<label><input type="radio" name="btn-location" id="btn-location-bottom" value="bottom"><span>dół</span></label><label><input type="radio" name="btn-location" id="btn-location-top" value="top"><span>góra</span></label>
+</td>
+</tr>
+<tr>
+<td>Kolor przycisku:</td>
+<td><input type="color" id="btn-color"></td>
+</tr>
+<tr>
+<td>Wyświetlanie przycisku w jednoliniowych polach tekstowych:</td>
+<td><label class="switch"><input type="checkbox" id="btn-inputs"><span class="slider"></span></label></td>
+</tr>
+<tr>
+<td>„Przeciągnij i upuść” dla okna z tekstem poprawionym:<i class="i" data-txt="Umożliwia zmianę położenia wyświetlonego okna iKorektora metodą drag and drop.">&#8505;</i></td>
+<td><label class="switch"><input type="checkbox" id="draggable"><span class="slider"></span></label></td>
+</tr>
+<tr>
+<td>Autom. zamiana oryginalnej treści na tekst poprawiony w polu tekstowym:</td>
+<td><label class="switch"><input type="checkbox" id="replace-txtarea"><span class="slider"></span></label></td>
+</tr>
+<tr>
+<td>Autom. zamiana oryginalnej treści na tekst poprawiony w treści strony:</td>
+<td><label class="switch"><input type="checkbox" id="replace-content"><span class="slider"></span></label></td>
+</tr>
+<tr>
+<td>Dzielenie tekstu na akapity – liczba zdań na akapit:<i class="i" data-txt="0 – bez dzielenia na akapity.">&#8505;</i></td>
+<td><input type="number" id="corr-parags" min="0" max="10" value="0"></td>
+</tr>
+<tr>
+<td>Ukrywanie wulgaryzmów – liczba gwiazdek w słowie:<i class="i" data-txt="0 – bez ukrywania, 6 – zakryte zawsze całe słowo.">&#8505;</i></td>
+<td><input type="number" id="corr-profanity" min="0" max="6" value="0"></td>
+</tr>
+<tr>
+<td>Ignorowanie wyrazów poprzedzonych znakiem „\”:<i class="i" data-txt="Umożliwia wyłączanie z autokorekty wybranych słów tekstu poprzez wpisanie ukośnika wstecznego przed słowem. Ukośnik zostanie usunięty z tekstu wynikowego.">&#8505;</i></td>
+<td><label class="switch"><input type="checkbox" id="corr-gateway"><span class="slider"></span></label></td>
+</tr>
+</table>
+<p id="save-info">Zmiany zostały zapisane.<span>Zmiany będą widoczne po ponownym załadowaniu strony z aktywnym przyciskiem iKorektora.</span></p>
+<script src="/js/func.js"></script>
+<script src="/js/premium.js"></script>
+<script src="/js/options.js"></script>
+<link rel="stylesheet" href="/css/options.css">
+</body>
+</html>

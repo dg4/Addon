@@ -1,0 +1,76 @@
+#iko-do, #iko-do:before {position: absolute; width: 30px; height: 30px; border-radius: 15px}
+#iko-do {display: none; border: none; color: #fff; background: var(--bgcolor); font: bold 14px Arial, sans-serif; letter-spacing: 1px; outline: none; 
+    padding: 0 0 0 26px; margin: 0; box-shadow: 0 0 5px grey; overflow: hidden; cursor: pointer; z-index: 9999999; 
+    -webkit-transition: width .4s; transition: width .4s}
+#iko-do:hover, #iko-do.iko-do-big {width: 130px}
+#iko-do:before {content: ""; top: 0; left: 0; background: var(--bgcolor) var(--bgimage) no-repeat}
+#iko-do:disabled:before {-webkit-animation: iko-spin 2s linear infinite; -moz-animation: iko-spin 2s linear infinite; animation: iko-spin 2s linear infinite}
+#iko-do:focus {outline: none} 
+#iko-do::-moz-focus-inner {border: 0}
+#iko-inf {display: none; width: 90%; max-width: 450px; position: absolute; margin: 0; padding: 8px; background: #fff; color: #191919; 
+    box-shadow: 0 0 20px rgba(0,0,0,.2); font-family: Arial; line-height: normal; box-sizing: border-box; z-index: 999999; border-radius: 8px}
+#iko-inf.iko-draggable {cursor: move}
+#iko-inf:before {content: ""; position: absolute; bottom: 100%; right: 6px; border: solid; border-width: 9px; border-color: transparent transparent #fff transparent}
+#iko-inf.iko-to-right:before {right: auto; left: 6px}
+.iko-btn {display: inline-block; height: 36px; min-height: 34px; width: 48%; margin: 9px 2px 2px; padding: 0; float: right; background: #589d62; color: #fff; 
+    font: normal 14px Arial; text-align: center; position: relative; cursor: pointer; border: none; outline: none; box-shadow: none; border-radius: 18px}
+.iko-btn:before {content: "↻"; position: absolute; left: 15px; top: 2px; font: normal 28px Arial; transform: rotate(-15deg) scaleX(-1)}
+.iko-btn#iko-accept:after {content: "A"; position: absolute; left: 17px; background: #589d62; font: bold 12px/1 Arial; border-top-right-radius: 5px}
+.iko-btn#iko-cancel:before {content: "+"; top: -5px; transform: rotate(45deg); font: normal 40px Arial; color: gray}
+.iko-btn:disabled {opacity: .7; cursor: not-allowed}
+.iko-btn:hover, #iko-inf a:hover, #iko-lmt:hover {opacity: .7}
+.iko-btn:hover:before {transform: rotate(-375deg) scaleX(-1); transition: transform 1s}
+.iko-btn#iko-cancel {float: left; margin-right: 0; background: #e0e0e0; color: #191919}
+#iko-txt-area {width: 100%; margin: 0; padding: 4px 6px 41px; border: 2px solid #f1f1f1; background-position: 0 -11px; letter-spacing: 1px;
+    position: relative; box-sizing: border-box; border-radius: 6px; clear: both}
+#iko-i {position: absolute; right: 1px; bottom: 1px; text-decoration: none; display: inline-block; width: 20px; height: 20px; background: #ccc; color: #fff; 
+    font: normal 16px/18px Arial; text-align: center; border-radius: 10px}
+#iko-i:hover #iko-menu {visibility: visible}
+#iko-menu {width: 200px; position: absolute; top: 100%; visibility: hidden; margin: 0; padding: 0; text-align: center; font-size: 13px; background: #fff; 
+    list-style: none; box-shadow: 0 0 12px silver; border-radius: 6px; z-index: 9999999}
+#iko-menu li {height: 32px; margin: 0; font: normal 13px/30px Arial; color: #0078A0; cursor: pointer}
+#iko-menu li:hover {background: #f1f1f1}
+#iko-menu a {display: block; color: #0078A0; text-decoration: none; font: normal 13px/30px Arial}
+#iko-txt-corr {text-align: left; font: normal 18px/23px Arial; color: #191919; white-space: pre-wrap; word-wrap: break-word}
+#iko-txt-corr.iko-corr-err {font-style: oblique}
+#iko-txt-corr a {display: inline; font: oblique 18px Arial; color: #093; text-decoration: underline}
+#iko-lmt-wnd {height: 21px; padding: 0; margin: 0; position: absolute; left: 6px; bottom: 0; overflow: hidden; cursor: pointer}
+#iko-lmt {list-style: none; padding: 0; margin: 0; position: relative; left: 0; top: 0; -webkit-transition: top .4s ease; transition: top .4s ease}
+#iko-lmt li {height: 21px; margin: 0; padding: 0; font: normal 13px/17px Arial; text-align: left; color: grey; letter-spacing: normal}
+#iko-lmt li:after {content: " \2304"; position: relative; top: -2px; font-size: 16px; cursor: pointer; color: #191919}
+#iko-lmt li span:first-child {font-weight: bold}
+#iko-corr-cnt {color: green}
+.iko-mark {position: relative}
+.iko-corr {display: inline-block; min-width: 2px; min-height: 17px; padding: 0; margin-left: 1px; font: normal 18px Arial; color: #191919; white-space: pre; cursor: auto; border-radius: 2px}
+.iko-corr span {text-decoration: underline green solid; background: none}
+.iko-corr-succ {background: #98FB98}
+.iko-corr-succ-sugg {background: linear-gradient(to bottom right, #98FB98 50%, #87cefa 50%)}
+.iko-corr-succ-fail {background: linear-gradient(to bottom right, #98FB98 50%, #f90 50%)}
+.iko-corr-sugg {background: #87cefa}
+.iko-corr-fail {background: #f66}
+.iko-corr-fail-sugg {background: #f90}
+.iko-corr-rev {background: #ccc}
+.iko-corr-user {background: #52d681}
+.iko-mark-menu {display: block; position: absolute; width: 135px; left: 50%; top: 100%; visibility: hidden; transform: translateX(-49%); text-align: left; 
+    letter-spacing: normal; color: #fff; font: normal 13px/1 Arial; background: rgba(0,0,0,.9); padding: 9px; margin: 0;
+    box-shadow: 0 0 9px #fff; box-sizing: border-box; z-index: 999999; border-radius: 6px}
+.iko-mark-menu:before {content: ""; position: absolute; bottom: 100%; left: 46%; border: solid; border-width: 4px; 
+    border-color: transparent transparent rgba(0, 0, 0, .8) transparent}
+.iko-mark:hover .iko-mark-menu {visibility: visible}
+.iko-mark-menu ul {margin: 0 0 8px 0; padding: 0 0 0 11px; list-style: disc; box-sizing: border-box}
+.iko-mark-menu li {margin-bottom: 2px}
+.iko-mark-menu a {color: #98FB98}
+.iko-mark-btn {width: 100%; background: #f1f1f1; color: #191919; margin: 9px 0 0; padding: 4px 0; font: normal 15px Arial; cursor: pointer;
+    text-align: center; word-wrap: break-word; hyphens: auto; border: none; border-radius: 4px}
+.iko-mark-btn:first-of-type {margin-top: 0}
+.iko-mark-btn:hover {background: #fff}
+.iko-mark-btn:disabled, .iko-mark-btn:disabled span {color: silver}
+.iko-mark-btn.iko-sugg {font-weight: bold}
+.iko-mark-btn span {color: green}
+#iko-inf.iko-chrome .iko-btn:before {top: 4px; left: 16px; font-size: 26px}
+#iko-inf.iko-chrome .iko-btn#iko-cancel:before {top: -4px; font-size: 40px}
+#iko-inf.iko-chrome #iko-i {line-height: 19px}
+#iko-inf.iko-chrome .iko-mark-menu ul {padding-left: 16px}
+@-moz-keyframes iko-spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes iko-spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes iko-spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
